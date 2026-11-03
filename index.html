@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Road Escape!</title><style>@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;600;700;900&display=swap');
+:root{font-family:'Noto Sans KR',sans-serif;color:#294b3b;background:#f7f7ed;font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 0% 35%,#e1ecd8,transparent 45%),radial-gradient(ellipse at 100% 80%,#e7eed9,transparent 45%);min-height:100dvh}main{max-width:920px;margin:auto;padding:24px 26px 12px}header{display:flex;justify-content:space-between;align-items:center;padding-bottom:22px;border-bottom:1px solid #dce3d3;font-size:12px}header a{color:#305944;text-decoration:none;font-weight:900;letter-spacing:1px}header span{color:#83917e}.screen{text-align:center;max-width:580px;margin:38px auto}section[hidden]{display:none}.eyebrow{font-size:10px;font-weight:900;letter-spacing:3px;color:#87977a}h1{font-family:'Jua',sans-serif;font-weight:400;font-size:54px;line-height:1.2;letter-spacing:-2px;margin:24px 0}h1 em{font-style:normal;color:#72a178}p{font-size:14px;line-height:1.9;color:#7a8974}.scene{height:160px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:50px;background:linear-gradient(transparent 62%,#e1c995 62%,#e1c995 82%,transparent 82%);margin:15px 0 30px}.scene .hero-car{font-size:67px;transform:translateY(26px)}button{font-family:inherit;border:1px solid #d6dfce;border-radius:13px;padding:13px 18px;color:#3e6048;background:#fffef7;font-weight:700;cursor:pointer;touch-action:manipulation;min-height:44px}button:hover{filter:brightness(.96)}button:focus-visible{outline:3px solid #c59a51;outline-offset:3px}button:disabled,button.used{background:#e5e5df;color:#93968d;border-color:#d8d9d1}button.primary{background:#3e7253;color:white;border:0;width:100%;max-width:340px;box-shadow:0 5px 0 #2d563c;font-size:16px;padding:17px}.primary b{float:right}.start-notes{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin:30px 0 20px;font-size:11px;color:#687c62}small{font-size:11px;color:#899381;display:block}footer{display:flex;justify-content:space-between;border-top:1px solid #dce3d3;padding-top:18px;font-size:9px;color:#8c9a82;letter-spacing:1px}.game-title{display:flex;align-items:center;justify-content:space-between;text-align:left}h2{font-family:'Jua',sans-serif;font-size:27px;font-weight:400;margin:8px 0 18px}h2 span{font-family:inherit;font-size:15px;color:#8f9e83}.score{font-size:10px;text-align:right}.score strong{display:block;font-size:26px}.stats{display:flex;background:#fffdf5;border:1px solid #e2e6d8;border-radius:15px;margin:0 0 15px;padding:13px 0;font-size:10px;color:#8a947f}.stats div{flex:1}.stats div+div{border-left:1px solid #e4e7dc}.stats strong{display:block;color:#3e6149;font-size:18px;margin-top:4px}.board-wrap{background:#c2d5a4;padding:10px;border-radius:21px;box-shadow:0 6px 0 #aec293,0 15px 25px #577b3b12;max-width:440px;margin:auto}canvas{display:block;width:100%;aspect-ratio:1;border-radius:12px;touch-action:none}#notice{font-size:12px;min-height:38px;padding:14px 0 8px;color:#70835f}.tools{display:flex;gap:7px;justify-content:center}.tools button{font-size:11px;padding:10px 12px}.tools span{background:#edf0e4;border-radius:5px;padding:1px 5px;margin-left:3px}.dpad{margin:15px auto 8px;display:flex;align-items:center;flex-direction:column;gap:4px}.dpad div{display:flex;align-items:center;gap:5px}.dpad button{width:52px;height:43px;padding:0;font-size:22px;background:#e9eedf;border-color:#cfdac4;box-shadow:0 3px 0 #c6d2ba}.dpad span{width:52px;font-size:23px}#game{margin-top:24px;margin-bottom:23px}#result-icon{font-size:70px;margin-bottom:20px}.result-score{background:#e9eedf;border-radius:18px;margin:30px auto;padding:22px;width:200px;font-size:12px}.result-score strong{display:block;font-size:48px}#result>button{display:block;margin:14px auto}#result>button:not(.primary){border:0;background:transparent}#time.urgent{color:#bf694c}@media(max-width:520px){main{padding:18px 16px 10px}header span{display:none}.screen{margin:30px auto}h1{font-size:45px}.scene{font-size:40px;gap:5px}.scene .hero-car{font-size:53px}footer span{letter-spacing:0;font-size:8px}.board-wrap{max-width:min(100%,43dvh)}h2{font-size:23px}.stats{padding:9px 0}.stats strong{font-size:16px}#game{margin-top:18px}.tools button{padding:9px 10px}.dpad{margin-top:12px}}
+</style></head>
+<body><main><header><a href="#" id="home">🌿 ROAD ESCAPE!</a><span>작은 숲속의 길 찾기</span></header>
+<section id="start" class="screen"><div class="eyebrow">A LITTLE FOREST ADVENTURE</div><h1>Road <em>Escape!</em></h1><p>지나간 자리에 길이 생겨요.<br>갈림길과 막다른 길을 살피며 출구까지 달려 보세요.</p><div class="scene"><span>🌲</span><span>🏡</span><span class="hero-car">🚙</span><span>🌳</span><span>🏁</span></div><button id="play" class="primary">모험 시작하기 <b>→</b></button><div class="start-notes"><span>⏱ 한 판 60초</span><span>🌱 총 10스테이지 · 15×15부터</span><span>↶ 스테이지당 되돌리기 3회</span></div><small>방향키 · 인접한 땅 터치 · 아래 방향 버튼</small></section>
+<section id="game" class="screen" hidden><div class="game-title"><div><div class="eyebrow">FOREST TRAIL</div><h2>숲속 드라이브 <span id="stage"></span></h2></div><div class="score">클리어 <strong id="score">0</strong></div></div><div class="stats"><div>남은 시간<strong id="time">60초</strong></div><div>충돌 <strong id="hits">0 / 3</strong></div><div>되돌리기<strong id="left">3회</strong></div></div><div class="board-wrap"><canvas id="board" width="720" height="720" aria-label="숲속 길 찾기 게임판"></canvas></div><div id="notice" role="status" aria-live="polite">출구의 깃발까지 길을 만들어 주세요.</div><div class="tools"><button id="undo">↶ 되돌리기 <span>3</span></button><button id="restart">↻ 다시 시작</button></div><div class="dpad" aria-label="방향 조작"><button data-d="0,-1" aria-label="위">↑</button><div><button data-d="-1,0" aria-label="왼쪽">←</button><span>🚙</span><button data-d="1,0" aria-label="오른쪽">→</button></div><button data-d="0,1" aria-label="아래">↓</button></div><small>방향키 또는 자동차 옆 칸을 터치해 이동하세요.</small></section>
+<section id="result" class="screen" hidden><div id="result-icon">🏁</div><div class="eyebrow">YOUR FOREST JOURNEY</div><h1 id="result-title"></h1><p id="result-copy"></p><div class="result-score">클리어한 스테이지<strong id="total">0</strong></div><button id="next" class="primary"></button><button id="back">처음으로</button></section><footer>ROAD ESCAPE! <span>천천히 생각하고, 한 칸씩 앞으로.</span></footer></main><script>﻿const $=id=>document.getElementById(id),dirs=[[0,-1],[1,0],[0,1],[-1,0]],cv=$('board'),ctx=cv.getContext('2d');
+let level=1,cleared=0,n,grid,path,undoLeft,hits,deadline,active=false,finished=false,won=false,bump=null,lastDir=[1,0];
+const key=([x,y])=>x+','+y,eq=(a,b)=>a[0]===b[0]&&a[1]===b[1];
+function screen(id){for(const el of document.querySelectorAll('.screen'))el.hidden=el.id!==id;active=id==='game'&&!finished;}
+// Two distinct protected routes; distribute the remaining obstacles without solid blocks.
+function generate(l){
+ const size=l+14,count=Math.round(size*size*(.46+l*.02)),openCount=size*size-count;
+ const randomRoute=(rightBias)=>{const route=[[0,0]];let x=0,y=0;while(x<size-1||y<size-1){if(x===size-1)y++;else if(y===size-1)x++;else if(Math.random()<rightBias)x++;else y++;route.push([x,y]);}return route;};
+ // Penalize dense patches and isolated grass; favor connected decoys and junctions.
+ const blocks=g=>{
+  let score=0;
+  for(let y=0;y<size;y++)for(let x=0;x<size;x++){
+   if(g[y][x]){
+    if(x+1<size&&y+1<size&&g[y][x+1]&&g[y+1][x]&&g[y+1][x+1])score+=20;
+    if(x+3<size&&g[y][x+1]&&g[y][x+2]&&g[y][x+3])score+=3;
+    if(y+3<size&&g[y+1][x]&&g[y+2][x]&&g[y+3][x])score+=3;
+   }else{
+    const degree=dirs.filter(([dx,dy])=>x+dx>=0&&y+dy>=0&&x+dx<size&&y+dy<size&&!g[y+dy][x+dx]).length;
+    if(!degree)score+=12;else if(degree>=3)score-=.6;
+   }
+   if(x+3<size&&y+3<size){let obstacles=0;for(let b=y;b<y+4;b++)for(let a=x;a<x+4;a++)obstacles+=!!g[b][a];score+=.12*(obstacles-16*count/(size*size))**2;}
+  }
+  return score;
+ };
+
+ let best,bestScore=Infinity;
+ for(let attempt=0;attempt<24;attempt++){
+  const bias=.64+Math.random()*.12,r1=randomRoute(bias),r2=randomRoute(1-bias),first=new Set(r1.map(key)),protectedCells=new Set([...r1,...r2].map(key));
+  // Keep the two routes in separate regions for most of the journey.
+  const separation=r1.slice(1,-1).reduce((sum,p,i)=>sum+Math.abs(p[0]-r2[i+1][0])+Math.abs(p[1]-r2[i+1][1]),0)/(r1.length-2);
+  if(r2.filter(p=>!first.has(key(p))).length<Math.ceil((r1.length-2)*.75)||separation<size*.30||protectedCells.size>openCount)continue;
+  const g=Array.from({length:size},(_,y)=>Array.from({length:size},(_,x)=>protectedCells.has(x+','+y)?0:1));
+  let opened=protectedCells.size;
+  const closed=[];for(let y=0;y<size;y++)for(let x=0;x<size;x++)if(g[y][x])closed.push([x,y]);
+  // Sample candidate removals so large boards generate promptly.
+  while(opened<openCount){let selected=0,score=Infinity;for(let sample=0;sample<8;sample++){const i=Math.floor(Math.random()*closed.length),[x,y]=closed[i];g[y][x]=0;const candidate=blocks(g)+Math.random()*.5;g[y][x]=1;if(candidate<score){score=candidate;selected=i;}}const [x,y]=closed[selected];g[y][x]=0;closed[selected]=closed.at(-1);closed.pop();opened++;}
+
+  // Relocate obstacles while protecting both solutions and the exact count.
+  let score=blocks(g);
+  for(let k=0;k<180;k++){
+   const x=Math.floor(Math.random()*size),y=Math.floor(Math.random()*size),a=Math.floor(Math.random()*size),b=Math.floor(Math.random()*size);
+   if(!g[y][x]||g[b][a]||protectedCells.has(a+','+b))continue;
+   g[y][x]=0;g[b][a]=1;const next=blocks(g);if(next<=score)score=next;else{g[y][x]=1;g[b][a]=0;}
+  }
+  const layoutScore=score-separation*1.5;
+  if(layoutScore<bestScore){bestScore=layoutScore;best=g;}
+ }
+ // Retry if random route pairs did not meet the separation requirement.
+ if(!best)return generate(l);
+ for(let y=0;y<size;y++)for(let x=0;x<size;x++)if(best[y][x])best[y][x]=1+Math.floor(Math.random()*4);
+ return best;
+}
+function start(reset=true){n=level+14;if(reset)grid=generate(level);path=[[0,0]];undoLeft=3;hits=0;deadline=performance.now()+60000;finished=false;bump=null;screen('game');notice('출구의 깃발까지 길을 만들어 주세요.');update();}
+function notice(t){$('notice').textContent=t;}
+function valid(p){return p[0]>=0&&p[1]>=0&&p[0]<n&&p[1]<n&&!grid[p[1]][p[0]]&&!path.some(v=>eq(v,p));}
+function options(){const p=path.at(-1);return dirs.map(d=>[p[0]+d[0],p[1]+d[1]]).filter(valid);}
+function move(dx,dy){if(!active)return;if(performance.now()>=deadline){end(false,'시간이 다 되었어요. 다시 길을 찾아볼까요?');return;}const p=path.at(-1),next=[p[0]+dx,p[1]+dy];lastDir=[dx,dy];if(next[0]<0||next[1]<0||next[0]>=n||next[1]>=n){notice('숲 바깥으로는 갈 수 없어요.');return;}if(grid[next[1]][next[0]]){hits++;bump={at:performance.now(),dx,dy};notice('💥 장애물과 부딪혔어요! '+hits+' / 3');if(hits>3)end(false,'장애물에 4번 부딪혔어요.');update();return;}if(path.some(v=>eq(v,next))){notice('이미 만든 도로는 다시 지나갈 수 없어요.');return;}path.push(next);if(eq(next,[n-1,n-1])){cleared=Math.max(cleared,level);end(true,level===10?'열 개의 숲길을 모두 빠져나왔어요!':'다음 숲에서는 길이 조금 더 복잡해져요.');}else if(!options().length){if(undoLeft)notice('막다른 길이에요! 되돌리기·다시 시작을 눌러 보세요.');else end(false,'막다른 길에 갇혔어요. 다시 시작해 다른 길을 선택해 보세요.');}else notice('좋아요! 같은 길을 밟지 않고 출구로 가세요.');update();}
+function undo(){if(!active||!undoLeft||path.length<2)return;path.pop();undoLeft--;notice('직전 이동을 되돌렸어요. 다른 길을 선택해 보세요.');update();}
+function update(){ $('stage').textContent=String(level).padStart(2,'0')+' / 10';$('score').textContent=cleared;$('hits').textContent=hits+' / 3';$('left').textContent=undoLeft+'회';$('undo').querySelector('span').textContent=undoLeft;$('undo').disabled=!undoLeft||path.length<2;}
+function end(success,copy){finished=true;active=false;won=success;screen('result');$('result-icon').textContent=success?'🏁':'🌧️';$('result-title').textContent=success?(level===10?'모든 숲길 클리어!':'숲 밖으로 탈출 성공!'):'잠깐 쉬어 갈까요?';$('result-copy').textContent=copy;$('total').textContent=cleared;$('next').textContent=success?(level===10?'새 모험 시작하기 →':'다음 스테이지 →'):'같은 스테이지 재도전 ↻';update();}
+function draw(now){ctx.clearRect(0,0,720,720);if(!grid)return;const s=720/n,visited=new Set(path.map(key)),p=path.at(-1);for(let y=0;y<n;y++)for(let x=0;x<n;x++){ctx.fillStyle=(x+y)%2?'#d5e2b5':'#dce8bf';ctx.beginPath();ctx.roundRect(x*s+2,y*s+2,s-4,s-4,Math.min(10,s/8));ctx.fill();if(visited.has(key([x,y]))){ctx.fillStyle='#ddc08b';ctx.fillRect(x*s+2,y*s+2,s-4,s-4);ctx.fillStyle='#e9d2a3';for(let i=0;i<3;i++)ctx.fillRect(x*s+s*(.2+i*.25),y*s+s*.6,3,3);}if(grid[y][x]){ctx.font=s*.63+'px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(['','🏡','🌲','💧','🪨'][grid[y][x]],(x+.5)*s,(y+.53)*s);} }
+ctx.textAlign='center';ctx.textBaseline='middle';ctx.font=s*.58+'px serif';ctx.fillText('🏁',(n-.5)*s,(n-.5)*s);if(path.length===1){ctx.font=s*.12+'px sans-serif';ctx.fillStyle='#627a4c';ctx.fillText('START',s*.5,s*.86);}let bx=0,by=0;if(bump&&now-bump.at<340){const f=Math.sin((now-bump.at)/340*Math.PI)*s*.15;bx=bump.dx*f;by=bump.dy*f;ctx.font=s*.35+'px serif';ctx.fillText('💥',(p[0]+.5)*s+bx*3,(p[1]+.2)*s+by*3);}ctx.font=s*.66+'px serif';ctx.fillText('🚙',(p[0]+.5)*s+bx,(p[1]+.53)*s+by);}
+function tick(now){if(active){const seconds=Math.max(0,Math.ceil((deadline-now)/1000));$('time').textContent=seconds+'초';$('time').classList.toggle('urgent',seconds<=10);if(!seconds)end(false,'60초가 지났어요. 다시 시작해 다른 길을 선택해 보세요.');}draw(now);requestAnimationFrame(tick);}requestAnimationFrame(tick);
+$('play').onclick=()=>{level=1;cleared=0;start();};$('home').onclick=e=>{e.preventDefault();screen('start');};$('back').onclick=()=>screen('start');$('undo').onclick=undo;$('restart').onclick=()=>start(false);$('next').onclick=()=>{if(won){if(level===10){level=1;cleared=0;}else level++;start();}else start(false);};
+document.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>move(...b.dataset.d.split(',').map(Number)));document.addEventListener('keydown',e=>{const d={ArrowUp:[0,-1],ArrowRight:[1,0],ArrowDown:[0,1],ArrowLeft:[-1,0]}[e.key];if(d&&active){e.preventDefault();move(...d);}});cv.addEventListener('pointerdown',e=>{if(!active)return;const r=cv.getBoundingClientRect(),x=Math.floor((e.clientX-r.left)/r.width*n),y=Math.floor((e.clientY-r.top)/r.height*n),p=path.at(-1);if(Math.abs(x-p[0])+Math.abs(y-p[1])===1)move(x-p[0],y-p[1]);else notice('자동차 바로 옆의 상하좌우 칸을 눌러 주세요.');});
+
+
+
+</script></body></html>
+
+
